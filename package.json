@@ -1,0 +1,23 @@
+{
+  "name": "random-quote-machine",
+  "version": "1.0.0",
+  "description": "A Random Quote Machine created to complete a freeCodeCamp challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonsales/random-quote-machine.git"
+  },
+  "author": "Ramon Sales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramonsales/random-quote-machine/issues"
+  },
+  "homepage": "https://github.com/ramonsales/random-quote-machine#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
