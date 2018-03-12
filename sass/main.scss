@@ -2,7 +2,8 @@
 $color-white: #fff;
 $color-black: #000;
 $color-twitter: #1da1f2;
-$color-new-quote: #bdc3c7;
+$color-new-quote: #27ae60;
+$color-gray: #636e72;
 
 * {
     box-sizing: border-box;
@@ -11,7 +12,7 @@ $color-new-quote: #bdc3c7;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; // 10px
 }
 
 body {
@@ -29,41 +30,78 @@ main {
     background-position: top;
 }
 
-.quote-box {
+.container {
     position: absolute;
-    top: 40%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
-    & blockquote {
-        font-size: 3em;
+    border: .2em solid $color-white;
+    padding: 4em 6em 1em;
+}
+
+.quote-box {
+    font-size: 3em;
+    &__text {
+        position: relative;
+        text-align: center;
+        &:before {
+            content: '\201C';
+            font-size: 4em;
+            display: block;
+            position: absolute;
+            top: -.45em;
+            left: -.3em;
+        }
+        
+        &:after {
+            content: '\201E';
+            font-size: 4em;
+            display: block;
+            position: absolute;
+            bottom: -.3em;
+            right: -.3em;
+        }
+    }
+
+    &__author {
+        font-weight: 100;
+        display: block;
+        text-align: center;
+        margin-top: 1em;
     }
 }
 
 .panel {
-    margin-top: 4.5em;
-    text-align: left;
+    text-align: center;
+    margin-top: 4em;
 }
 
 .btn {
     color: $color-white;
-    
     &:link, &:visited {
         display: inline-block;
         text-align: center;
         text-decoration: none;
         font-size: 4em;
-        margin-right: 1em; 
-        transition: color .3s;      
+        width: 2em;
+        &:not(:last-child) {
+            margin-right: 0.5em;
+        }
+        transition: ease color .3s;
+             
     }
 
     &__text {
-        display: block;
+        opacity: 0;
         visibility: hidden;
-        font-size: 2rem;
+        display: block;
+        font-size: 1.5rem;
         font-weight: 300;
+        transition: ease opacity .3s, ease visibility .3s;
     }
 
     &:hover &__text {
+        opacity: 1;
         visibility: visible;
     }
 
@@ -77,5 +115,18 @@ main {
         &:hover, &:active {
             color: $color-new-quote;
         }
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-gray;
+    font-size: 1.1em;
+    & a {
+        text-decoration: none;
+        color: $color-gray
     }
 }
