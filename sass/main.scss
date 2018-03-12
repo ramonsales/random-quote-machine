@@ -1,5 +1,81 @@
+// Variables
+$color-white: #fff;
+$color-black: #000;
+$color-twitter: #1da1f2;
+$color-new-quote: #bdc3c7;
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: $color-white;
+    font-weight: 300;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(rgba($color-black, .8), rgba($color-black, .8)),
+        url("https://source.unsplash.com/collection/881815/1600x900");
+    background-size: cover;
+    background-position: top;
+}
+
+.quote-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & blockquote {
+        font-size: 3em;
+    }
+}
+
+.panel {
+    margin-top: 4.5em;
+    text-align: left;
+}
+
+.btn {
+    color: $color-white;
+    
+    &:link, &:visited {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 4em;
+        margin-right: 1em; 
+        transition: color .3s;      
+    }
+
+    &__text {
+        display: block;
+        visibility: hidden;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    &:hover &__text {
+        visibility: visible;
+    }
+
+    &--tweet {
+        &:hover, &:active {
+            color: $color-twitter;
+        }
+    }
+
+    &--new-quote {
+        &:hover, &:active {
+            color: $color-new-quote;
+        }
+    }
 }

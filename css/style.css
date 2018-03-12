@@ -2,3 +2,51 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 300; }
+
+main {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://source.unsplash.com/collection/881815/1600x900");
+  background-size: cover;
+  background-position: top; }
+
+.quote-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .quote-box blockquote {
+    font-size: 3em; }
+
+.panel {
+  margin-top: 4.5em;
+  text-align: left; }
+
+.btn {
+  color: #fff; }
+  .btn:link, .btn:visited {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 4em;
+    margin-right: 1em;
+    transition: color .3s; }
+  .btn__text {
+    display: block;
+    visibility: hidden;
+    font-size: 2rem;
+    font-weight: 300; }
+  .btn:hover .btn__text {
+    visibility: visible; }
+  .btn--tweet:hover, .btn--tweet:active {
+    color: #1da1f2; }
+  .btn--new-quote:hover, .btn--new-quote:active {
+    color: #bdc3c7; }
