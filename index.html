@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Random Quote Machine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i" rel="stylesheet">
     <!-- Icons -->
@@ -13,14 +15,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
 <body>
-    <main>
+    <main class="bg">
         <div class="container">
             <blockquote class="quote-box">
-                <p class="quote-box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veritatis ipsum maiores autem natus odio ratione blanditiis a ipsa, tenetur aperiam corporis explicabo, tempora placeat error. Necessitatibus cum quisquam sunt? Tenetur aperiam corporis explicabo, tempora placeat error explicaboaderaco.</p>
-                <cite class="quote-box__author">&ndash; Author</cite>
+                <p class="quote-box__text"><span id="quote-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad eos eius assumenda harum, quisquam dicta sit sunt eveniet quam obcaecati culpa blanditiis omnis tempore molestias molestiae possimus aut quis veniam culpa blanditiis omnis tempore molestias molestiae possimus aut quis veniamculpa blanditiis omnis tempore molestias molestiae possimus.</span></p>
+                <cite class="quote-box__author" id="quote-author">Lorem, ipsum dolor sit</cite>
             </blockquote>
             <div class="panel">
-                <a class="btn btn--tweet" href="#">
+                <a class="btn btn--tweet" href="#" target="_blank">
                     <i class="btn__icon ion-social-twitter-outline"></i>
                     <span class="btn__text">Tweet</span>
                 </a>

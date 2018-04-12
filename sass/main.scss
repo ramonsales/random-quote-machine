@@ -5,6 +5,14 @@ $color-twitter: #1da1f2;
 $color-new-quote: #27ae60;
 $color-gray: #636e72;
 
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,15 +30,17 @@ body {
 }
 
 main {
+    @include clearfix;
     position: relative;
     height: 100vh;
-    background-image: linear-gradient(rgba($color-black, .8), rgba($color-black, .8)),
-        url("https://source.unsplash.com/collection/881815/1600x900");
+    background-image: linear-gradient(rgba($color-black, .85), rgba($color-black, .85)), url("https://source.unsplash.com/O453M2Liufs/1600x900");
     background-size: cover;
     background-position: top;
 }
 
 .container {
+    width: 80vw;
+    text-align: center;
     position: absolute;
     top: 42%;
     left: 50%;
@@ -43,6 +53,7 @@ main {
     font-size: 3em;
     &__text {
         position: relative;
+        min-height: 6em;
         text-align: center;
         &:before {
             content: '\201C';
@@ -62,7 +73,7 @@ main {
             right: -.3em;
         }
     }
-
+    
     &__author {
         font-weight: 100;
         display: block;
@@ -70,10 +81,22 @@ main {
         margin-top: 1em;
     }
 }
+/*
+
+CHANGE ALL THE EM UNITS TO REM UNITS
+
+*/
+#quote-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .panel {
     text-align: center;
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
 .btn {
