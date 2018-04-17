@@ -3,7 +3,8 @@ $color-white: #fff;
 $color-black: #000;
 $color-twitter: #1da1f2;
 $color-new-quote: #27ae60;
-$color-gray: #636e72;
+$color-grey: #636e72;
+$color-grey-light: #ccc;
 
 @mixin clearfix {
     &::after {
@@ -45,32 +46,32 @@ main {
     top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: .2em solid $color-white;
-    padding: 4em 6em 1em;
+    border: .2rem solid $color-white;
+    padding: 4rem 6rem 2.5rem;
 }
 
 .quote-box {
-    font-size: 3em;
+    font-size: 3rem;
     &__text {
         position: relative;
-        min-height: 6em;
+        min-height: 20rem;
         text-align: center;
         &:before {
             content: '\201C';
-            font-size: 4em;
+            font-size: 12rem;
             display: block;
             position: absolute;
-            top: -.45em;
-            left: -.3em;
+            top: -4rem;
+            left: -4rem;
         }
         
         &:after {
             content: '\201E';
-            font-size: 4em;
+            font-size: 12rem;
             display: block;
             position: absolute;
-            bottom: -.3em;
-            right: -.3em;
+            bottom: -4rem;
+            right: -4rem;
         }
     }
     
@@ -78,14 +79,10 @@ main {
         font-weight: 100;
         display: block;
         text-align: center;
-        margin-top: 1em;
+        margin-top: 3rem;
     }
 }
-/*
 
-CHANGE ALL THE EM UNITS TO REM UNITS
-
-*/
 #quote-text {
     position: absolute;
     width: 100%;
@@ -96,7 +93,7 @@ CHANGE ALL THE EM UNITS TO REM UNITS
 
 .panel {
     text-align: center;
-    margin-top: 3em;
+    margin-top: 3rem;
 }
 
 .btn {
@@ -105,11 +102,8 @@ CHANGE ALL THE EM UNITS TO REM UNITS
         display: inline-block;
         text-align: center;
         text-decoration: none;
-        font-size: 4em;
-        width: 2em;
-        &:not(:last-child) {
-            margin-right: 0.5em;
-        }
+        font-size: 4rem;
+        width: 10rem;
         transition: ease color .3s;
              
     }
@@ -141,15 +135,20 @@ CHANGE ALL THE EM UNITS TO REM UNITS
     }
 }
 
-footer {
+.footer {
     position: absolute;
     bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
-    color: $color-gray;
-    font-size: 1.1em;
-    & a {
+    color: $color-grey;
+    font-size: 1.1rem;
+
+    &__link:link, &__link:visited {
         text-decoration: none;
-        color: $color-gray
+        color: $color-grey;
+    }
+    
+    &__link:hover, &__link:active {
+        color: $color-grey-light;
     }
 }
