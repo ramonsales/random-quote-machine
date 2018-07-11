@@ -6,6 +6,30 @@ $color-new-quote: #27ae60;
 $color-grey: #636e72;
 $color-grey-light: #ccc;
 
+// Breakpoints
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 22.5em) { @content };    //360px
+    }
+    @if $breakpoint == tablet {
+        @media (max-width: 48em) { @content };   //768px
+    }
+    @if $breakpoint == laptop {
+        @media (max-width: 64em) { @content };      //1024px
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: 85.375em) { @content };   //1366px
+    }
+}
+
 @mixin clearfix {
     &::after {
         content: "";
@@ -21,7 +45,20 @@ $color-grey-light: #ccc;
 }
 
 html {
-    font-size: 62.5%; // 10px
+    font-size: 62.5%;       //62.5% * 16px = 10px
+
+    @include respond(laptop) {    // width <= 1024px?
+        font-size: 56.25%;  // 1rem = 9px, 9/16 = 56,25%
+    }
+    @include respond(tablet) {    // width <= 768px?
+        font-size: 50%;     // 1rem = 8px, 8/16 = 50%
+    }
+    @include respond(phone) {       // width <= 360px?
+        font-size: 43.75%;   // 1rem = 7px, 7/16 = 43,75%
+    }
+    @include respond(desktop) { // width >= 1366px?
+        font-size: 75%;     // 1rem = 12px, 12/16 = 75%
+    }
 }
 
 body {
@@ -34,20 +71,24 @@ main {
     @include clearfix;
     position: relative;
     height: 100vh;
-    background-image: linear-gradient(rgba($color-black, .85), rgba($color-black, .85)), url("https://source.unsplash.com/O453M2Liufs/1600x900");
+    background-image: linear-gradient(rgba($color-black, .85), rgba($color-black, .85)), url("https://source.unsplash.com/YsoS7vH3x_I");
     background-size: cover;
     background-position: top;
 }
 
 .container {
-    width: 80vw;
+    width: 85vw;
     text-align: center;
     position: absolute;
-    top: 42%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: .2rem solid $color-white;
     padding: 4rem 6rem 2.5rem;
+
+    @include respond(phone) {
+        height: 95rem;
+    }
 }
 
 .quote-box {
@@ -56,7 +97,21 @@ main {
         position: relative;
         min-height: 20rem;
         text-align: center;
-        &:before {
+    }
+    
+    &__author {
+        font-weight: 100;
+        display: block;
+        text-align: center;
+        margin-top: 3rem;
+    }
+}
+
+#quote-text {
+    position: relative;
+    width: 100%;
+    display: block;
+    &:before {
             content: '\201C';
             font-size: 12rem;
             display: block;
@@ -73,22 +128,6 @@ main {
             bottom: -4rem;
             right: -4rem;
         }
-    }
-    
-    &__author {
-        font-weight: 100;
-        display: block;
-        text-align: center;
-        margin-top: 3rem;
-    }
-}
-
-#quote-text {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .panel {
