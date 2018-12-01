@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/ramonsales/random-quote-machine#readme",
   "devDependencies": {
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.10.0"
   }
 }
